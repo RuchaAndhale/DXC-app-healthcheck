@@ -1,0 +1,57 @@
+.card-title {
+    color: #0088c9;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px; 
+  font-size: 16px; /* Adjust icon size */
+}
+
+.btn i {
+  margin: 0; /* Ensure no margin around the icon */
+}
+
+.card {
+  position: relative;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px; /* Space between the button and the icon */
+}
+
+.btn.start-check {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn.start-check:hover {
+  background-color: #0056b3;
+}
+
+.status-icon {
+  font-size: 1.2rem;
+  margin-left: 0.5rem; /* Space between button and icon */
+}
+
+
+.status-icon.success {
+  color: green;
+}
+
+.status-icon.failure {
+  color: red;
+}

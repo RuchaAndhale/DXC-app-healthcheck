@@ -1,0 +1,14 @@
+.btn-main {
+    margin-left: 70px;
+    background-color: #7339b1;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.btn-main:hover {
+    color: #7339b1; /* Change text color on hover */
+    background-color: white; /* Change background on hover */
+    border: 1px solid #7339b1; /* Optional: Add a border on hover */
+  }

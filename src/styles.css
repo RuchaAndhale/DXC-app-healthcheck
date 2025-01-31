@@ -1,0 +1,30 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+body {
+    padding-top: 110px; /* Adjust based on your navbar's height */
+  }
+  
+.card {
+    height: 100%;
+  }
+  .card img {
+    padding: 20px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .btn {
+    background-color: #7c4cb0;
+    border: none;
+    color: white;
+    /* padding: 10px 20px;*/
+    border-radius: 10px; 
+}
+
+.btn:hover {
+    color: #7c4cb0; /* Change text color on hover */
+    background-color: white; /* Change background on hover */
+    border: 1px solid #7339b1; /* Optional: Add a border on hover */
+  }
+  
+  

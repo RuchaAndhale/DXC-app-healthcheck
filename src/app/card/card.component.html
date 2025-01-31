@@ -1,0 +1,46 @@
+
+ <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let card of cards">
+        <div class="card">
+          <!-- Health Check Button in Top-Right Corner -->
+          <button
+            class="btn btn-sm btn-outline-primary position-absolute top-0 end-0 m-2"
+            (click)="toggleHealthCheck(card)"
+          >
+            {{ card.isRunning ? 'Stop Health Check' : 'Start Health Check' }}
+          </button>
+
+          <!-- Success or Failure Indicator -->
+          <i
+            *ngIf="card.status !== null"
+            class="bi status-icon "
+            [ngClass]="{
+              'bi-check-circle text-success': card.status === true,
+              'bi-x-circle text-danger': card.status === false
+            }"
+          ></i>
+          <img [src]="card.image" class="card-img-top" alt="Card image">
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <!-- <p class="card-text">{{ card.description }}</p> -->
+            <div class="d-flex align-items-center">
+              <input
+                type="text"
+                class="form-control me-2"
+                [value]="card.link"
+                readonly
+              />
+              <button
+                class="btn btn-primary"
+                (click)="copyToClipboard(card.link)"
+              >
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   

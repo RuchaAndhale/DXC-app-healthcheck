@@ -1,0 +1,70 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* Keeps the navbar above other elements */
+}
+
+
+.shadow-navbar {
+  background-color: #E5D9F2;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-logo {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px; 
+}
+
+/* Style for the logo */
+.navbar-logo {
+    /*height: 90px;  Adjust height */
+    width: 90px; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within the bounds */
+  }
+  
+  /* Optional: Add some padding around the logo */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    /*height: 90px;*/
+    padding: 0.5rem 1rem;
+  }
+  /* Navbar links alignment */
+  .navbar-nav .nav-link {
+    line-height: 70px; /* Align with the height of the brand */
+    padding:0.5rem 0.1rem;   /* Adjust horizontal padding */
+  }
+  
+
+/*.navbar-nav .nav-item {
+    color: black;
+  }*/
+
+  .navbar-nav .nav-item:hover {
+    color: #5f249f;
+  }
+  
+  .navbar-nav .nav-item a {
+    color: inherit;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-nav .nav-item.active-item a {
+    color: #5f249f;
+    border: 2px solid #5f249f;
+  }
+   
+  /* Default toggler button icon color (black) */
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="none"><path stroke="black" stroke-width="3" d="M4 7h22M4 15h22M4 23h22"/></svg>');
+  }
+  
+  /* Change toggler icon color on hover (#5f249f) */
+  .navbar-toggler:hover .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="none"><path stroke="%235f249f" stroke-width="3" d="M4 7h22M4 15h22M4 23h22"/></svg>');
+  }
+
+
