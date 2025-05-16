@@ -7,12 +7,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from "@angular/common";
+import { FormsModule } from '@angular/forms';  // 👈 this is needed for ngModel
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
         //AppComponent,
         // NavbarComponent,
         //CardComponent
+        
     ],
     imports:[
         BrowserModule,
@@ -20,7 +23,9 @@ import { CommonModule } from "@angular/common";
         MatCardModule,
         MatButtonModule,
         MatIconModule,
-        CommonModule
+        CommonModule,
+        FormsModule,
+        LoginComponent
     ],
     providers: [HttpClientModule, provideHttpClient()
     ],

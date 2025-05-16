@@ -1,3 +1,17 @@
+.status-icon {
+  z-index: 10;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+
+
 .card-title {
     color: #0088c9;
 }
@@ -55,3 +69,11 @@
 .status-icon.failure {
   color: red;
 }
+
+.custom-card-img {
+  object-fit: contain;
+  height: 130px;
+  padding: 10px;
+  border-radius: 4px;
+}
+

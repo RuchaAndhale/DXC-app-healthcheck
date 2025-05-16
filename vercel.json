@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "dist/dxc-health-check/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/dist/dxc-health-check/$1"
+      }
+    ]
+  }
+  

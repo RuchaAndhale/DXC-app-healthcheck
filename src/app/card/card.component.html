@@ -1,46 +1,61 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let card of cards">
+      <div class="card position-relative shadow-sm rounded-3">
 
- <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-4 mb-3" *ngFor="let card of cards">
-        <div class="card">
-          <!-- Health Check Button in Top-Right Corner -->
-          <button
-            class="btn btn-sm btn-outline-primary position-absolute top-0 end-0 m-2"
-            (click)="toggleHealthCheck(card)"
-          >
-            {{ card.isRunning ? 'Stop Health Check' : 'Start Health Check' }}
-          </button>
+        <!-- Health Check Button -->
+        <button
+          class="btn btn-sm btn-outline-primary position-absolute top-0 end-0 m-2"
+          (click)="toggleHealthCheck(card)"
+        >
+          {{ card.isRunning ? 'Stop' : 'Check' }}
+        </button>
 
-          <!-- Success or Failure Indicator -->
-          <i
-            *ngIf="card.status !== null"
-            class="bi status-icon "
-            [ngClass]="{
-              'bi-check-circle text-success': card.status === true,
-              'bi-x-circle text-danger': card.status === false
-            }"
-          ></i>
-          <img [src]="card.image" class="card-img-top" alt="Card image">
-          <div class="card-body">
-            <h5 class="card-title">{{ card.title }}</h5>
-            <!-- <p class="card-text">{{ card.description }}</p> -->
-            <div class="d-flex align-items-center">
-              <input
-                type="text"
-                class="form-control me-2"
-                [value]="card.link"
-                readonly
-              />
-              <button
-                class="btn btn-primary"
-                (click)="copyToClipboard(card.link)"
-              >
-                <i class="bi bi-clipboard"></i>
-              </button>
-            </div>
+        <!-- Success/Failure Indicator -->
+        <i
+          *ngIf="card.status"
+          class="bi status-icon position-absolute top-0 start-0 m-2 fs-4"
+          [ngClass]="{
+            'bi-check-circle-fill text-success': card.status === 'Healthy',
+            'bi-x-circle-fill text-danger': card.status === 'Unhealthy'
+          }"
+        ></i>
+
+        <!-- Card Image -->
+        <img [src]="card.image" class="card-img-top custom-card-img mt-4" alt="{{ card.title }}" />
+
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ card.title }}</h5>
+
+          <div class="d-flex align-items-center mb-2">
+            <input
+              type="text"
+              class="form-control me-2"
+              [value]="card.link"
+              readonly
+            />
+            <button
+              class="btn btn-outline-secondary"
+              (click)="copyToClipboard(card.link)"
+              title="Copy Link"
+            >
+              <i class="bi bi-clipboard"></i>
+            </button>
           </div>
+
+          <!-- <div class="d-flex justify-content-between">
+            # Open link in new tab 
+            <a
+              class="btn btn-primary w-100"
+              [href]="card.link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Application
+            </a>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
-   
+</div>
